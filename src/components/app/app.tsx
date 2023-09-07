@@ -1,7 +1,12 @@
 import { Main } from 'pages';
 
-function App(): JSX.Element {
-  return <Main />;
+type AppScreenProps = {
+  offerCount: number;
+}
+
+function App(props: AppScreenProps): JSX.Element {
+  const { offerCount } = props;
+  return <Main offerCount={offerCount} />;
 }
 
 export default App;
