@@ -14,7 +14,7 @@ function App(props: AppScreenProps): JSX.Element {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<Main offerCount={offerCount} offers={offers} />} />
-        <Route path='offer/:id' element={<Offer />} />
+        <Route path='offer/:id' element={<Offer offers={offers} />} />
         <Route path='login' element={<Login />} />
         <Route path='*' element={<Page404 />} />
       </Route>
