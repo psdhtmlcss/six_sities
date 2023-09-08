@@ -1,11 +1,13 @@
-import { OfferCard } from 'components';
+import { OffersList } from 'components';
+import { Offers } from 'types';
 
 type MainScreenProps = {
   offerCount: number;
+  offers: Offers;
 }
 
 function Main(props: MainScreenProps): JSX.Element {
-  const { offerCount } = props;
+  const { offerCount, offers } = props;
   return (
     <>
       <h1 className='visually-hidden'>Cities</h1>
@@ -76,13 +78,7 @@ function Main(props: MainScreenProps): JSX.Element {
                 </li>
               </ul>
             </form>
-            <div className='cities__places-list places__list tabs__content'>
-              <OfferCard />
-              <OfferCard />
-              <OfferCard />
-              <OfferCard />
-              <OfferCard />
-            </div>
+            <OffersList offers={offers} />
           </section>
           <div className='cities__right-section'>
             <section className='cities__map map' />
