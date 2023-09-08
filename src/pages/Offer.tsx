@@ -4,12 +4,14 @@ import { ReviewsForm } from 'components';
 import { Reviews as ReviewsType } from 'types';
 import { reviews as reviewsJson } from 'mock/reviews';
 import { Reviews } from 'components';
+import { useAuth } from 'hooks';
 
 type OffersScreenProps = {
   offers: Offers;
 }
 
 function Offer({offers}: OffersScreenProps): JSX.Element {
+  const user = useAuth();
   const { id } = useParams();
   const currentOffer = offers.find((offer) => offer.id === Number(id)) as OfferType;
   const reviews: ReviewsType = reviewsJson;
@@ -21,7 +23,7 @@ function Offer({offers}: OffersScreenProps): JSX.Element {
           <div className='property__gallery'>
             {
               images.map((image) => (
-                <div className='property__image-wrapper' key={id}>
+                <div className='property__image-wrapper' key={image}>
                   <img
                     className='property__image'
                     src={image}
@@ -104,7 +106,7 @@ function Offer({offers}: OffersScreenProps): JSX.Element {
                 Reviews · <span className='reviews__amount'>{reviews.length}</span>
               </h2>
               <Reviews reviews={reviews} />
-              <ReviewsForm />
+              { user && <ReviewsForm /> }
             </section>
           </div>
         </div>

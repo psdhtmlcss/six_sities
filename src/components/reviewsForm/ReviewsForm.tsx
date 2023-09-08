@@ -1,6 +1,33 @@
+import { useState, ChangeEvent, FormEvent } from 'react';
+
+const CommentLength = {
+  Min: 50,
+  Max: 300
+};
+
 function ReviewsForm(): JSX.Element {
+  const [rating, setRating] = useState<null | string>(null);
+  const [comment, setComment] = useState<null | string>(null);
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setRating(evt.target.value);
+
+  };
+  const handleInput = (evt: ChangeEvent<HTMLTextAreaElement>) => {
+    if (evt.target.value.length >= CommentLength.Min && evt.target.value.length <= CommentLength.Max) {
+      setComment(evt.target.value);
+    } else {
+      setComment(null);
+    }
+  };
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+    const data = {
+      comment: comment,
+      rating: Number(rating),
+    };
+  };
   return (
-    <form className='reviews__form form' action='#' method='post'>
+    <form className='reviews__form form' action='#' method='post' onSubmit={handleSubmit}>
       <label className='reviews__label form__label' htmlFor='review'>
         Your review
       </label>
@@ -11,6 +38,7 @@ function ReviewsForm(): JSX.Element {
           defaultValue={5}
           id='5-stars'
           type='radio'
+          onChange={handleChange}
         />
         <label
           htmlFor='5-stars'
@@ -27,6 +55,7 @@ function ReviewsForm(): JSX.Element {
           defaultValue={4}
           id='4-stars'
           type='radio'
+          onChange={handleChange}
         />
         <label
           htmlFor='4-stars'
@@ -43,6 +72,7 @@ function ReviewsForm(): JSX.Element {
           defaultValue={3}
           id='3-stars'
           type='radio'
+          onChange={handleChange}
         />
         <label
           htmlFor='3-stars'
@@ -59,6 +89,7 @@ function ReviewsForm(): JSX.Element {
           defaultValue={2}
           id='2-stars'
           type='radio'
+          onChange={handleChange}
         />
         <label
           htmlFor='2-stars'
@@ -75,6 +106,7 @@ function ReviewsForm(): JSX.Element {
           defaultValue={1}
           id='1-star'
           type='radio'
+          onChange={handleChange}
         />
         <label
           htmlFor='1-star'
@@ -92,6 +124,9 @@ function ReviewsForm(): JSX.Element {
         name='review'
         placeholder='Tell how was your stay, what you like and what can be improved'
         defaultValue={''}
+        minLength={CommentLength.Min}
+        maxLength={CommentLength.Max}
+        onInput={handleInput}
       />
       <div className='reviews__button-wrapper'>
         <p className='reviews__help'>
@@ -103,7 +138,7 @@ function ReviewsForm(): JSX.Element {
         <button
           className='reviews__submit form__submit button'
           type='submit'
-          disabled
+          disabled={!(comment && rating)}
         >
           Submit
         </button>

@@ -9,7 +9,6 @@ type OfferScreenProps = {
 function OfferCard({offer}: OfferScreenProps): JSX.Element {
   const { id, previewImage, title, price, type, rating } = offer;
   const [hover, setHover] = useState<number | null>(null);
-  console.log(hover);
   const handleMouseOver = () => {
     setHover(id);
   };

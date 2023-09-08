@@ -4,11 +4,18 @@ type ReviewsScreenProps = {
   reviews: ReviewsType;
 }
 
+const MAX_REVIEWS = 10;
+
+const formatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long'
+});
+
 function Reviews({reviews}: ReviewsScreenProps): JSX.Element {
   return (
     <ul className='reviews__list'>
       {
-        reviews.map((review) => (
+        reviews.slice(0, MAX_REVIEWS).map((review) => (
           <li key={review.id} className='reviews__item'>
             <div className='reviews__user user'>
               <div className='reviews__avatar-wrapper user__avatar-wrapper'>
@@ -33,8 +40,7 @@ function Reviews({reviews}: ReviewsScreenProps): JSX.Element {
                 { review.comment }
               </p>
               <time className='reviews__time' dateTime='2019-04-24'>
-                April 2019
-                { `${new Date(review.date).getMonth()} ${new Date(review.date).getFullYear()}` }
+                { `${formatter.format(new Date(review.date))}` }
               </time>
             </div>
           </li>
