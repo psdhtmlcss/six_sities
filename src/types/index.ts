@@ -1,4 +1,4 @@
-import { Offers, Offer } from './offers';
+import { Offers, Offer, City } from './offers';
 import { Reviews, Review } from './reviews';
 
-export type { Offers, Offer, Reviews, Review };
+export type { Offers, Offer, City, Reviews, Review };

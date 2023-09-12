@@ -1,5 +1,7 @@
-import { OffersList } from 'components';
+import { OffersList, Map } from 'components';
 import { Offers } from 'types';
+import { useState } from 'react';
+import { Offer } from 'types';
 
 type MainScreenProps = {
   offerCount: number;
@@ -8,6 +10,12 @@ type MainScreenProps = {
 
 function Main(props: MainScreenProps): JSX.Element {
   const { offerCount, offers } = props;
+  const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
+
+  const onListMouseOver = (offerId: number | null) => {
+    const currentOffer = offers.find((offer) => offer.id === offerId) as Offer;
+    setSelectedOffer(currentOffer);
+  };
   return (
     <>
       <h1 className='visually-hidden'>Cities</h1>
@@ -78,10 +86,10 @@ function Main(props: MainScreenProps): JSX.Element {
                 </li>
               </ul>
             </form>
-            <OffersList offers={offers} />
+            <OffersList offers={offers} onListMouseOver={onListMouseOver} />
           </section>
           <div className='cities__right-section'>
-            <section className='cities__map map' />
+            <Map selectedOffer={selectedOffer} />
           </div>
         </div>
       </div>
