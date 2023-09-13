@@ -89,7 +89,7 @@ function Main(props: MainScreenProps): JSX.Element {
             <OffersList offers={offers} onListMouseOver={onListMouseOver} />
           </section>
           <div className='cities__right-section'>
-            <Map selectedOffer={selectedOffer} />
+            <Map offers={offers} selectedOffer={selectedOffer} />
           </div>
         </div>
       </div>

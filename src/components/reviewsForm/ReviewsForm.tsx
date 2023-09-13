@@ -21,10 +21,10 @@ function ReviewsForm(): JSX.Element {
   };
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    const data = {
-      comment: comment,
-      rating: Number(rating),
-    };
+    // const data = {
+    //   comment: comment,
+    //   rating: Number(rating),
+    // };
   };
   return (
     <form className='reviews__form form' action='#' method='post' onSubmit={handleSubmit}>

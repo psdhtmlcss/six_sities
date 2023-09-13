@@ -4,15 +4,15 @@ import { useState } from 'react';
 
 type OfferScreenProps = {
   offer: Offer;
-  onMouseOver: (offer: number | null) => void;
+  onListMouseOver: (offer: number | null) => void;
 }
 
-function OfferCard({offer, onMouseOver}: OfferScreenProps): JSX.Element {
+function OfferCard({offer, onListMouseOver}: OfferScreenProps): JSX.Element {
   const { id, previewImage, title, price, type, rating } = offer;
   const [hover, setHover] = useState<number | null>(null);
   const handleMouseOver = () => {
     setHover(id);
-    onMouseOver(hover);
+    onListMouseOver(hover);
   };
   const handleMouseOut = () => {
     setHover(null);

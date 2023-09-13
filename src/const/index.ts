@@ -1,0 +1,5 @@
+import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT} from './const';
+
+export { URL_MARKER_CURRENT, URL_MARKER_DEFAULT };
+
+
