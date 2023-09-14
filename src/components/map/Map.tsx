@@ -1,12 +1,13 @@
 import {Icon, Marker} from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useMap } from 'hooks';
 import { Offer, Offers } from 'types';
 import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from 'const';
 
 type MapScreenProps = {
-  selectedOffer: Offer | undefined;
+  selectedOffer?: Offer | undefined;
   offers: Offers;
 }
 
@@ -32,16 +33,14 @@ const currentCustomIcon = new Icon({
 });
 
 function Map({selectedOffer, offers}: MapScreenProps): JSX.Element {
-  // const city = selectedOffer?.city;
   const city = a;
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
-  // console.log('map', map);
+  const { id } = useParams();
 
   useEffect(() => {
     if (map) {
       offers.forEach((offer) => {
-        // console.log('place', offer.city.location.latitude, offer.city.location.longitude);
         const marker = new Marker({
           lat: offer.city.location.latitude,
           lng: offer.city.location.longitude
@@ -54,7 +53,7 @@ function Map({selectedOffer, offers}: MapScreenProps): JSX.Element {
     }
   }, [map, offers, selectedOffer]);
   return (
-    <section ref={mapRef} className='cities__map map' style={{height: '100%'}} />
+    id ? <section ref={mapRef} className='property__map map' style={{height: '579px', width: '1144px', margin: '0 auto 50px'}}/> : <section ref={mapRef} className='cities__map map' style={{height: '100%'}} />
   );
 }
 

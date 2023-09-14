@@ -5,6 +5,7 @@ import { Layout } from './layout/Layout';
 import { OffersList } from './offersList/OffersList';
 import { ReviewsForm } from './reviewsForm/ReviewsForm';
 import { Reviews } from './reviews/Reviews';
+import { ReviewItem } from './reviewItem/ReviewItem';
 import { Map } from './map/Map';
 
-export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, Map };
+export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map };

@@ -1,4 +1,5 @@
 import { useAuth } from './useAuth';
 import { useMap } from './useMap';
+import { usePageId } from './usePageId';
 
-export { useAuth, useMap };
+export { useAuth, useMap, usePageId };

@@ -1,25 +1,31 @@
 import { Offer } from 'types';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { usePageId } from 'hooks';
 
 type OfferScreenProps = {
   offer: Offer;
-  onListMouseOver: (offer: number | null) => void;
+  onListMouseOver?: (offer: number | null) => void;
 }
 
 function OfferCard({offer, onListMouseOver}: OfferScreenProps): JSX.Element {
+  const pageId = usePageId();
   const { id, previewImage, title, price, type, rating } = offer;
   const [hover, setHover] = useState<number | null>(null);
   const handleMouseOver = () => {
     setHover(id);
-    onListMouseOver(hover);
+    if (onListMouseOver) {
+      onListMouseOver(hover);
+    }
   };
   const handleMouseOut = () => {
     setHover(null);
   };
+  const articleClass = pageId ? 'near-places__card' : 'cities__card';
+  const wrapperClass = pageId ? 'near-places__image-wrapper' : 'cities__image-wrapper';
   return (
-    <article className='cities__card place-card' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      <div className='cities__image-wrapper place-card__image-wrapper'>
+    <article className={`place-card ${articleClass}`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <div className={`place-card__image-wrapper ${wrapperClass}`}>
         <Link to={`/offer/${id}`}>
           <img
             className='place-card__image'
