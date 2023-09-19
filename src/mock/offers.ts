@@ -1,4 +1,4 @@
-export const offers = [
+export const offersAmsterdam = [
   {
     city: {
       name: 'Amsterdam',
@@ -215,236 +215,6 @@ export const offers = [
     },
     'id': 4
   },
-  // {
-  //   'city': {
-  //     'name': 'Amsterdam',
-  //     'location': {
-  //       'latitude': 52.3809553943508,
-  //       'longitude': 4.939309666406198,
-  //       'zoom': 13
-  //     }
-  //   },
-  //   'previewImage': 'https://12.react.pages.academy/static/hotel/9.jpg',
-  //   'images': [
-  //     'https://12.react.pages.academy/static/hotel/14.jpg',
-  //     'https://12.react.pages.academy/static/hotel/19.jpg',
-  //     'https://12.react.pages.academy/static/hotel/13.jpg',
-  //     'https://12.react.pages.academy/static/hotel/18.jpg',
-  //     'https://12.react.pages.academy/static/hotel/7.jpg',
-  //     'https://12.react.pages.academy/static/hotel/17.jpg',
-  //     'https://12.react.pages.academy/static/hotel/2.jpg',
-  //     'https://12.react.pages.academy/static/hotel/20.jpg',
-  //     'https://12.react.pages.academy/static/hotel/16.jpg',
-  //     'https://12.react.pages.academy/static/hotel/3.jpg',
-  //     'https://12.react.pages.academy/static/hotel/12.jpg',
-  //     'https://12.react.pages.academy/static/hotel/1.jpg',
-  //     'https://12.react.pages.academy/static/hotel/5.jpg',
-  //     'https://12.react.pages.academy/static/hotel/11.jpg'
-  //   ],
-  //   'title': 'The Pondhouse - A Magical Place',
-  //   'isPremium': false,
-  //   'rating': 2.4,
-  //   'type': 'house',
-  //   'bedrooms': 4,
-  //   'maxAdults': 5,
-  //   'price': 584,
-  //   'goods': [
-  //     'Fridge',
-  //     'Baby seat',
-  //     'Coffee machine',
-  //     'Laptop friendly workspace',
-  //     'Air conditioning',
-  //     'Towels',
-  //     'Dishwasher',
-  //     'Breakfast',
-  //     'Washer'
-  //   ],
-  //   'host': {
-  //     'id': 25,
-  //     'name': 'Angelina',
-  //     'isPro': true,
-  //     'avatarUrl': 'img/avatar-angelina.jpg'
-  //   },
-  //   'description': 'Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs.',
-  //   'location': {
-  //     'latitude': 50.837557,
-  //     'longitude': 4.339697,
-  //     'zoom': 16
-  //   },
-  //   'id': 5
-  // },
-  // {
-  //   'city': {
-  //     'name': 'Dusseldorf',
-  //     'location': {
-  //       'latitude': 51.225402,
-  //       'longitude': 6.776314,
-  //       'zoom': 13
-  //     }
-  //   },
-  //   'previewImage': 'https://12.react.pages.academy/static/hotel/7.jpg',
-  //   'images': [
-  //     'https://12.react.pages.academy/static/hotel/15.jpg',
-  //     'https://12.react.pages.academy/static/hotel/16.jpg',
-  //     'https://12.react.pages.academy/static/hotel/13.jpg',
-  //     'https://12.react.pages.academy/static/hotel/8.jpg',
-  //     'https://12.react.pages.academy/static/hotel/7.jpg',
-  //     'https://12.react.pages.academy/static/hotel/18.jpg',
-  //     'https://12.react.pages.academy/static/hotel/9.jpg',
-  //     'https://12.react.pages.academy/static/hotel/1.jpg',
-  //     'https://12.react.pages.academy/static/hotel/3.jpg',
-  //     'https://12.react.pages.academy/static/hotel/19.jpg',
-  //     'https://12.react.pages.academy/static/hotel/6.jpg',
-  //     'https://12.react.pages.academy/static/hotel/14.jpg',
-  //     'https://12.react.pages.academy/static/hotel/10.jpg',
-  //     'https://12.react.pages.academy/static/hotel/12.jpg'
-  //   ],
-  //   'title': 'Amazing and Extremely Central Flat',
-  //   'isPremium': false,
-  //   'rating': 2,
-  //   'type': 'house',
-  //   'bedrooms': 1,
-  //   'maxAdults': 8,
-  //   'price': 101,
-  //   'goods': [
-  //     'Air conditioning',
-  //     'Towels',
-  //     'Laptop friendly workspace',
-  //     'Washer',
-  //     'Fridge',
-  //     'Baby seat',
-  //     'Breakfast'
-  //   ],
-  //   'host': {
-  //     'id': 25,
-  //     'name': 'Angelina',
-  //     'isPro': true,
-  //     'avatarUrl': 'img/avatar-angelina.jpg'
-  //   },
-  //   'description': 'Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.',
-  //   'location': {
-  //     'latitude': 51.237402,
-  //     'longitude': 6.779314,
-  //     'zoom': 16
-  //   },
-  //   'id': 6
-  // },
-  // {
-  //   'city': {
-  //     'name': 'Amsterdam',
-  //     'location': {
-  //       'latitude': 52.37454,
-  //       'longitude': 4.897976,
-  //       'zoom': 13
-  //     }
-  //   },
-  //   'previewImage': 'https://12.react.pages.academy/static/hotel/10.jpg',
-  //   'images': [
-  //     'https://12.react.pages.academy/static/hotel/13.jpg',
-  //     'https://12.react.pages.academy/static/hotel/19.jpg',
-  //     'https://12.react.pages.academy/static/hotel/7.jpg',
-  //     'https://12.react.pages.academy/static/hotel/8.jpg',
-  //     'https://12.react.pages.academy/static/hotel/6.jpg',
-  //     'https://12.react.pages.academy/static/hotel/5.jpg',
-  //     'https://12.react.pages.academy/static/hotel/2.jpg',
-  //     'https://12.react.pages.academy/static/hotel/20.jpg',
-  //     'https://12.react.pages.academy/static/hotel/11.jpg',
-  //     'https://12.react.pages.academy/static/hotel/16.jpg',
-  //     'https://12.react.pages.academy/static/hotel/17.jpg',
-  //     'https://12.react.pages.academy/static/hotel/1.jpg',
-  //     'https://12.react.pages.academy/static/hotel/3.jpg',
-  //     'https://12.react.pages.academy/static/hotel/18.jpg'
-  //   ],
-  //   'title': 'Canal View Prinsengracht',
-  //   'isPremium': true,
-  //   'rating': 2.6,
-  //   'type': 'room',
-  //   'bedrooms': 1,
-  //   'maxAdults': 2,
-  //   'price': 147,
-  //   'goods': [
-  //     'Coffee machine',
-  //     'Fridge',
-  //     'Air conditioning',
-  //     'Breakfast',
-  //     'Washer',
-  //     'Dishwasher',
-  //     'Laptop friendly workspace',
-  //     'Baby seat',
-  //     'Towels'
-  //   ],
-  //   'host': {
-  //     'id': 25,
-  //     'name': 'Angelina',
-  //     'isPro': true,
-  //     'avatarUrl': 'img/avatar-angelina.jpg'
-  //   },
-  //   'description': 'Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.',
-  //   'location': {
-  //     'latitude': 52.389540000000004,
-  //     'longitude': 4.883976,
-  //     'zoom': 16
-  //   },
-  //   'id': 7
-  // },
-  // {
-  //   'city': {
-  //     'name': 'Hamburg',
-  //     'location': {
-  //       'latitude': 53.550341,
-  //       'longitude': 10.000654,
-  //       'zoom': 13
-  //     }
-  //   },
-  //   'previewImage': 'https://12.react.pages.academy/static/hotel/13.jpg',
-  //   'images': [
-  //     'https://12.react.pages.academy/static/hotel/9.jpg',
-  //     'https://12.react.pages.academy/static/hotel/12.jpg',
-  //     'https://12.react.pages.academy/static/hotel/2.jpg',
-  //     'https://12.react.pages.academy/static/hotel/14.jpg',
-  //     'https://12.react.pages.academy/static/hotel/11.jpg',
-  //     'https://12.react.pages.academy/static/hotel/17.jpg',
-  //     'https://12.react.pages.academy/static/hotel/1.jpg',
-  //     'https://12.react.pages.academy/static/hotel/4.jpg',
-  //     'https://12.react.pages.academy/static/hotel/8.jpg',
-  //     'https://12.react.pages.academy/static/hotel/16.jpg',
-  //     'https://12.react.pages.academy/static/hotel/18.jpg',
-  //     'https://12.react.pages.academy/static/hotel/3.jpg',
-  //     'https://12.react.pages.academy/static/hotel/20.jpg',
-  //     'https://12.react.pages.academy/static/hotel/7.jpg'
-  //   ],
-  //   'title': 'Penthouse, 4-5 rooms + 5 balconies',
-  //   'isPremium': false,
-  //   'rating': 3.9,
-  //   'type': 'room',
-  //   'bedrooms': 1,
-  //   'maxAdults': 2,
-  //   'price': 238,
-  //   'goods': [
-  //     'Air conditioning',
-  //     'Breakfast',
-  //     'Laptop friendly workspace',
-  //     'Dishwasher',
-  //     'Washer',
-  //     'Towels',
-  //     'Baby seat',
-  //     'Coffee machine',
-  //     'Fridge'
-  //   ],
-  //   'host': {
-  //     'id': 25,
-  //     'name': 'Angelina',
-  //     'isPro': true,
-  //     'avatarUrl': 'img/avatar-angelina.jpg'
-  //   },
-  //   'description': 'Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.',
-  //   'location': {
-  //     'latitude': 53.558341000000006,
-  //     'longitude': 9.999654000000001,
-  //     'zoom': 16
-  //   },
-  //   'id': 8
-  // },
   // {
   //   'city': {
   //     'name': 'Hamburg',
@@ -4784,3 +4554,237 @@ export const offers = [
   //   'id': 88
   // }
 ];
+
+export const offersParis = [
+  {
+    'city': {
+      'name': 'Paris',
+      'location': {
+        'latitude': 52.3809553943508,
+        'longitude': 4.939309666406198,
+        'zoom': 13
+      }
+    },
+    'previewImage': 'https://12.react.pages.academy/static/hotel/9.jpg',
+    'images': [
+      'https://12.react.pages.academy/static/hotel/14.jpg',
+      'https://12.react.pages.academy/static/hotel/19.jpg',
+      'https://12.react.pages.academy/static/hotel/13.jpg',
+      'https://12.react.pages.academy/static/hotel/18.jpg',
+      'https://12.react.pages.academy/static/hotel/7.jpg',
+      'https://12.react.pages.academy/static/hotel/17.jpg',
+      'https://12.react.pages.academy/static/hotel/2.jpg',
+      'https://12.react.pages.academy/static/hotel/20.jpg',
+      'https://12.react.pages.academy/static/hotel/16.jpg',
+      'https://12.react.pages.academy/static/hotel/3.jpg',
+      'https://12.react.pages.academy/static/hotel/12.jpg',
+      'https://12.react.pages.academy/static/hotel/1.jpg',
+      'https://12.react.pages.academy/static/hotel/5.jpg',
+      'https://12.react.pages.academy/static/hotel/11.jpg'
+    ],
+    'title': 'dfasdfsadfadf',
+    'isPremium': false,
+    'rating': 2.4,
+    'type': 'house',
+    'bedrooms': 4,
+    'maxAdults': 5,
+    'price': 584,
+    'goods': [
+      'Fridge',
+      'Baby seat',
+      'Coffee machine',
+      'Laptop friendly workspace',
+      'Air conditioning',
+      'Towels',
+      'Dishwasher',
+      'Breakfast',
+      'Washer'
+    ],
+    'host': {
+      'id': 25,
+      'name': 'Angelina',
+      'isPro': true,
+      'avatarUrl': 'img/avatar-angelina.jpg'
+    },
+    'description': 'Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs.',
+    'location': {
+      'latitude': 50.837557,
+      'longitude': 4.339697,
+      'zoom': 16
+    },
+    'id': 5
+  },
+  {
+    'city': {
+      'name': 'Paris',
+      'location': {
+        'latitude': 51.225402,
+        'longitude': 6.776314,
+        'zoom': 13
+      }
+    },
+    'previewImage': 'https://12.react.pages.academy/static/hotel/7.jpg',
+    'images': [
+      'https://12.react.pages.academy/static/hotel/15.jpg',
+      'https://12.react.pages.academy/static/hotel/16.jpg',
+      'https://12.react.pages.academy/static/hotel/13.jpg',
+      'https://12.react.pages.academy/static/hotel/8.jpg',
+      'https://12.react.pages.academy/static/hotel/7.jpg',
+      'https://12.react.pages.academy/static/hotel/18.jpg',
+      'https://12.react.pages.academy/static/hotel/9.jpg',
+      'https://12.react.pages.academy/static/hotel/1.jpg',
+      'https://12.react.pages.academy/static/hotel/3.jpg',
+      'https://12.react.pages.academy/static/hotel/19.jpg',
+      'https://12.react.pages.academy/static/hotel/6.jpg',
+      'https://12.react.pages.academy/static/hotel/14.jpg',
+      'https://12.react.pages.academy/static/hotel/10.jpg',
+      'https://12.react.pages.academy/static/hotel/12.jpg'
+    ],
+    'title': '433234234523452345',
+    'isPremium': false,
+    'rating': 2,
+    'type': 'house',
+    'bedrooms': 1,
+    'maxAdults': 8,
+    'price': 101,
+    'goods': [
+      'Air conditioning',
+      'Towels',
+      'Laptop friendly workspace',
+      'Washer',
+      'Fridge',
+      'Baby seat',
+      'Breakfast'
+    ],
+    'host': {
+      'id': 25,
+      'name': 'Angelina',
+      'isPro': true,
+      'avatarUrl': 'img/avatar-angelina.jpg'
+    },
+    'description': 'Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.',
+    'location': {
+      'latitude': 51.237402,
+      'longitude': 6.779314,
+      'zoom': 16
+    },
+    'id': 6
+  },
+  {
+    'city': {
+      'name': 'Paris',
+      'location': {
+        'latitude': 52.37454,
+        'longitude': 4.897976,
+        'zoom': 13
+      }
+    },
+    'previewImage': 'https://12.react.pages.academy/static/hotel/10.jpg',
+    'images': [
+      'https://12.react.pages.academy/static/hotel/13.jpg',
+      'https://12.react.pages.academy/static/hotel/19.jpg',
+      'https://12.react.pages.academy/static/hotel/7.jpg',
+      'https://12.react.pages.academy/static/hotel/8.jpg',
+      'https://12.react.pages.academy/static/hotel/6.jpg',
+      'https://12.react.pages.academy/static/hotel/5.jpg',
+      'https://12.react.pages.academy/static/hotel/2.jpg',
+      'https://12.react.pages.academy/static/hotel/20.jpg',
+      'https://12.react.pages.academy/static/hotel/11.jpg',
+      'https://12.react.pages.academy/static/hotel/16.jpg',
+      'https://12.react.pages.academy/static/hotel/17.jpg',
+      'https://12.react.pages.academy/static/hotel/1.jpg',
+      'https://12.react.pages.academy/static/hotel/3.jpg',
+      'https://12.react.pages.academy/static/hotel/18.jpg'
+    ],
+    'title': 'aaaaaaaa',
+    'isPremium': true,
+    'rating': 2.6,
+    'type': 'room',
+    'bedrooms': 1,
+    'maxAdults': 2,
+    'price': 147,
+    'goods': [
+      'Coffee machine',
+      'Fridge',
+      'Air conditioning',
+      'Breakfast',
+      'Washer',
+      'Dishwasher',
+      'Laptop friendly workspace',
+      'Baby seat',
+      'Towels'
+    ],
+    'host': {
+      'id': 25,
+      'name': 'Angelina',
+      'isPro': true,
+      'avatarUrl': 'img/avatar-angelina.jpg'
+    },
+    'description': 'Relax, rejuvenate and unplug in this ultimate rustic getaway experience in the country. In our beautiful screened Pondhouse, you can gaze at the stars and listen to the sounds of nature from your cozy warm bed.',
+    'location': {
+      'latitude': 52.389540000000004,
+      'longitude': 4.883976,
+      'zoom': 16
+    },
+    'id': 7
+  },
+  {
+    'city': {
+      'name': 'Paris',
+      'location': {
+        'latitude': 53.550341,
+        'longitude': 10.000654,
+        'zoom': 13
+      }
+    },
+    'previewImage': 'https://12.react.pages.academy/static/hotel/13.jpg',
+    'images': [
+      'https://12.react.pages.academy/static/hotel/9.jpg',
+      'https://12.react.pages.academy/static/hotel/12.jpg',
+      'https://12.react.pages.academy/static/hotel/2.jpg',
+      'https://12.react.pages.academy/static/hotel/14.jpg',
+      'https://12.react.pages.academy/static/hotel/11.jpg',
+      'https://12.react.pages.academy/static/hotel/17.jpg',
+      'https://12.react.pages.academy/static/hotel/1.jpg',
+      'https://12.react.pages.academy/static/hotel/4.jpg',
+      'https://12.react.pages.academy/static/hotel/8.jpg',
+      'https://12.react.pages.academy/static/hotel/16.jpg',
+      'https://12.react.pages.academy/static/hotel/18.jpg',
+      'https://12.react.pages.academy/static/hotel/3.jpg',
+      'https://12.react.pages.academy/static/hotel/20.jpg',
+      'https://12.react.pages.academy/static/hotel/7.jpg'
+    ],
+    'title': 'gggggg',
+    'isPremium': false,
+    'rating': 3.9,
+    'type': 'room',
+    'bedrooms': 1,
+    'maxAdults': 2,
+    'price': 238,
+    'goods': [
+      'Air conditioning',
+      'Breakfast',
+      'Laptop friendly workspace',
+      'Dishwasher',
+      'Washer',
+      'Towels',
+      'Baby seat',
+      'Coffee machine',
+      'Fridge'
+    ],
+    'host': {
+      'id': 25,
+      'name': 'Angelina',
+      'isPro': true,
+      'avatarUrl': 'img/avatar-angelina.jpg'
+    },
+    'description': 'Design interior in most sympathetic area! Complitely renovated, well-equipped, cosy studio in idyllic, over 100 years old wooden house. Calm street, fast connection to center and airport.',
+    'location': {
+      'latitude': 53.558341000000006,
+      'longitude': 9.999654000000001,
+      'zoom': 16
+    },
+    'id': 8
+  },
+];
+

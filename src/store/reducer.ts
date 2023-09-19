@@ -1,4 +1,4 @@
-import { offers as offersJson } from 'mock/offers';
+import { offersAmsterdam as offersJson } from 'mock/offers';
 import { createReducer } from '@reduxjs/toolkit';
 import { changeCity } from './action';
 

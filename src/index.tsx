@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components';
 import { BrowserRouter } from 'react-router-dom';
-import { offers as offersJson } from 'mock/offers';
+import { offersAmsterdam as offersJson } from 'mock/offers';
 import { cities } from 'mock/cities';
 import { Offers } from 'types';
 import { Provider } from 'react-redux';
