@@ -1,29 +1,31 @@
 import { OffersList, Map } from 'components';
-import { Cities, Offers } from 'types';
+import { cities } from 'mock/cities';
 import { useState } from 'react';
 import { Offer } from 'types';
 import { LocationsList } from 'components';
+import { store } from 'store';
 
-type MainScreenProps = {
-  offerCount: number;
-  offers: Offers;
-  cities: Cities;
-}
 
-function Main(props: MainScreenProps): JSX.Element {
-  const { offerCount, offers, cities } = props;
+function Main(): JSX.Element {
+  const { offers } = store.getState();
+  const offerCount = offers.length;
   const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
+  const [currentCity, setCurrentCity] = useState<string>(cities[0]);
 
   const onListMouseOver = (offerId: number | null) => {
     const currentOffer = offers.find((offer) => offer.id === offerId) as Offer;
     setSelectedOffer(currentOffer);
+  };
+
+  const onChangeCity = (city: string) => {
+    setCurrentCity(city);
   };
   return (
     <>
       <h1 className='visually-hidden'>Cities</h1>
       <div className='tabs'>
         <section className='locations container'>
-          <LocationsList cities={cities} />
+          <LocationsList cities={cities} onChangeCity={onChangeCity} currentCity={currentCity} />
         </section>
       </div>
       <div className='cities'>

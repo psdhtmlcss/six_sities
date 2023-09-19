@@ -6,19 +6,22 @@ import { changeCity } from 'store/action';
 
 type LocationItemProps = {
   city: string;
+  onChangeCity: (city: string) => void;
+  currentCity: string;
 }
 
-function LocationItem({ city }: LocationItemProps): JSX.Element {
-  // const cityy = useAppSelector((state) => state.city);
+function LocationItem({ city, onChangeCity, currentCity }: LocationItemProps): JSX.Element {
   const dispatch = useAppDispatch();
   const handleClick = () => {
     dispatch(changeCity({ city: city, offers: offersParis }));
+    onChangeCity(city);
   };
+  const activeClass = city === currentCity ? 'tabs__item--active' : '';
   return (
     <li className='locations__item'>
       <Link
         to={AppRoute.Main}
-        className='locations__item-link tabs__item'
+        className={`locations__item-link tabs__item ${activeClass}`}
         onClick={handleClick}
       >
         <span>{city}</span>

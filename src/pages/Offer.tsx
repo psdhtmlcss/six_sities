@@ -1,16 +1,14 @@
-import { Offers, Offer as OfferType } from 'types';
+import { Offer as OfferType } from 'types';
 import { useParams } from 'react-router-dom';
 import { ReviewsForm } from 'components';
 import { Reviews as ReviewsType } from 'types';
 import { reviews as reviewsJson } from 'mock/reviews';
 import { Reviews, Map, OffersList } from 'components';
 import { useAuth } from 'hooks';
+import { store } from 'store';
 
-type OffersScreenProps = {
-  offers: Offers;
-}
-
-function Offer({offers}: OffersScreenProps): JSX.Element {
+function Offer(): JSX.Element {
+  const { offers } = store.getState();
   const user = useAuth();
   const { id } = useParams();
   const currentOffer = offers.find((offer) => offer.id === Number(id)) as OfferType;
