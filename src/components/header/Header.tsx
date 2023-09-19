@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { SignOut } from './SignOut';
 import { SignIn } from './SignIn';
+import { AppRoute } from 'const';
 
 function Header(): JSX.Element {
   const user = useAuth();
@@ -10,7 +11,7 @@ function Header(): JSX.Element {
       <div className='container'>
         <div className='header__wrapper'>
           <div className='header__left'>
-            <Link to='/' className='header__logo-link header__logo-link--active'>
+            <Link to={AppRoute.Main} className='header__logo-link header__logo-link--active'>
               <img
                 className='header__logo'
                 src='img/logo.svg'

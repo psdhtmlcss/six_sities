@@ -2,6 +2,7 @@ import { Offer } from 'types';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { usePageId } from 'hooks';
+import { AppRoute } from 'const';
 
 type OfferScreenProps = {
   offer: Offer;
@@ -26,7 +27,7 @@ function OfferCard({offer, onListMouseOver}: OfferScreenProps): JSX.Element {
   return (
     <article className={`place-card ${articleClass}`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <div className={`place-card__image-wrapper ${wrapperClass}`}>
-        <Link to={`/offer/${id}`}>
+        <Link to={`${AppRoute.Offer}${id}`}>
           <img
             className='place-card__image'
             src={previewImage}
@@ -50,7 +51,7 @@ function OfferCard({offer, onListMouseOver}: OfferScreenProps): JSX.Element {
           </div>
         </div>
         <h2 className='place-card__name'>
-          <Link to={`/offer/${id}`}>{title}</Link>
+          <Link to={`${AppRoute.Offer}${id}`}>{title}</Link>
         </h2>
         <p className='place-card__type'>{type}</p>
       </div>
