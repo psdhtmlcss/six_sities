@@ -1,15 +1,17 @@
 import { OffersList, Map } from 'components';
-import { Offers } from 'types';
+import { Cities, Offers } from 'types';
 import { useState } from 'react';
 import { Offer } from 'types';
+import { LocationsList } from 'components';
 
 type MainScreenProps = {
   offerCount: number;
   offers: Offers;
+  cities: Cities;
 }
 
 function Main(props: MainScreenProps): JSX.Element {
-  const { offerCount, offers } = props;
+  const { offerCount, offers, cities } = props;
   const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
 
   const onListMouseOver = (offerId: number | null) => {
@@ -21,38 +23,7 @@ function Main(props: MainScreenProps): JSX.Element {
       <h1 className='visually-hidden'>Cities</h1>
       <div className='tabs'>
         <section className='locations container'>
-          <ul className='locations__list tabs__list'>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item' href='#'>
-                <span>Paris</span>
-              </a>
-            </li>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item' href='#'>
-                <span>Cologne</span>
-              </a>
-            </li>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item' href='#'>
-                <span>Brussels</span>
-              </a>
-            </li>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item tabs__item--active'>
-                <span>Amsterdam</span>
-              </a>
-            </li>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item' href='#'>
-                <span>Hamburg</span>
-              </a>
-            </li>
-            <li className='locations__item'>
-              <a className='locations__item-link tabs__item' href='#'>
-                <span>Dusseldorf</span>
-              </a>
-            </li>
-          </ul>
+          <LocationsList cities={cities} />
         </section>
       </div>
       <div className='cities'>
