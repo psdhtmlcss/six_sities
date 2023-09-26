@@ -8,10 +8,10 @@ import { store } from 'store';
 
 function Main(): JSX.Element {
   const { offers } = store.getState();
-  // console.log(offers);
-  const offerCount = offers.length;
   const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
   const [currentCity, setCurrentCity] = useState<string>(cities[0]);
+  const offersPlace = offers.filter((offer) => offer.city.name === currentCity);
+  const offerCount = offersPlace.length;
 
   const onListMouseOver = (offerId: number | null) => {
     const currentOffer = offers.find((offer) => offer.id === offerId) as Offer;
@@ -33,7 +33,7 @@ function Main(): JSX.Element {
         <div className='cities__places-container container'>
           <section className='cities__places places'>
             <h2 className='visually-hidden'>Places</h2>
-            <b className='places__found'>{`${offerCount} places to stay in Amsterdam`}</b>
+            <b className='places__found'>{`${offerCount} places to stay in ${currentCity}`}</b>
             <form className='places__sorting' action='#' method='get'>
               <span className='places__sorting-caption'>Sort by</span>
               <span className='places__sorting-type' tabIndex={0}>
@@ -60,10 +60,10 @@ function Main(): JSX.Element {
                 </li>
               </ul>
             </form>
-            <OffersList offers={offers} onListMouseOver={onListMouseOver} />
+            <OffersList offers={offersPlace} onListMouseOver={onListMouseOver} />
           </section>
           <div className='cities__right-section'>
-            <Map offers={offers} selectedOffer={selectedOffer} />
+            <Map offers={offersPlace} selectedOffer={selectedOffer} />
           </div>
         </div>
       </div>

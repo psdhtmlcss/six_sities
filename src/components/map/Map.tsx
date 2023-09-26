@@ -11,15 +11,6 @@ type MapScreenProps = {
   offers: Offers;
 }
 
-const a = {
-  name: 'Amsterdam',
-  location: {
-    latitude: 52.374,
-    longitude: 4.88969,
-    zoom: 13
-  },
-};
-
 const defaultCustomIcon = new Icon({
   iconUrl: URL_MARKER_DEFAULT,
   iconSize: [40, 40],
@@ -33,7 +24,8 @@ const currentCustomIcon = new Icon({
 });
 
 function Map({selectedOffer, offers}: MapScreenProps): JSX.Element {
-  const city = a;
+  console.log('im render');
+  const city = offers[0].city;
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
   const { id } = useParams();
@@ -42,8 +34,8 @@ function Map({selectedOffer, offers}: MapScreenProps): JSX.Element {
     if (map) {
       offers.forEach((offer) => {
         const marker = new Marker({
-          lat: offer.city.location.latitude,
-          lng: offer.city.location.longitude
+          lat: offer.location.latitude,
+          lng: offer.location.longitude
         });
 
         marker.setIcon(
