@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AppRoute } from 'const';
 import { useAppDispatch } from 'hooks';
-import { offersParis } from 'mock/offers';
 import { changeCity } from 'store/action';
 
 type LocationItemProps = {
@@ -13,7 +12,7 @@ type LocationItemProps = {
 function LocationItem({ city, onChangeCity, currentCity }: LocationItemProps): JSX.Element {
   const dispatch = useAppDispatch();
   const handleClick = () => {
-    dispatch(changeCity({ city: city, offers: offersParis }));
+    dispatch(changeCity(city));
     onChangeCity(city);
   };
   const activeClass = city === currentCity ? 'tabs__item--active' : '';

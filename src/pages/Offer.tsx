@@ -1,11 +1,10 @@
-import { Offer as OfferType } from 'types';
+import { Offer as OfferType, Reviews as ReviewsType } from 'types';
 import { useParams } from 'react-router-dom';
 import { ReviewsForm } from 'components';
-import { Reviews as ReviewsType } from 'types';
-import { reviews as reviewsJson } from 'mock/reviews';
 import { Reviews, Map, OffersList } from 'components';
 import { useAuth } from 'hooks';
 import { store } from 'store';
+import { reviews as reviewsJson } from 'mock/reviews';
 
 function Offer(): JSX.Element {
   const { offers } = store.getState();

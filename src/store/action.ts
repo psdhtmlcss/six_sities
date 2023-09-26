@@ -1,7 +1,13 @@
 import { createAction } from '@reduxjs/toolkit';
-import { State } from 'types';
+import { Offers } from 'types';
 
-export const changeCity = createAction('changeCity', (value: State) => (
+export const changeCity = createAction('changeCity', (value: string) => (
+  {
+    payload: value
+  }
+));
+
+export const loadOffers = createAction('loadOffers', (value: Offers) => (
   {
     payload: value
   }

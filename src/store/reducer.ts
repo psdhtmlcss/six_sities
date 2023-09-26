@@ -1,18 +1,26 @@
-import { offersAmsterdam as offersJson } from 'mock/offers';
+import { cities } from 'const';
 import { createReducer } from '@reduxjs/toolkit';
-import { changeCity } from './action';
+import { changeCity, loadOffers } from './action';
+import { Offers } from 'types';
 
-const initalState = {
-  city: 'Amsterdam',
-  offers: offersJson
+type InitialState = {
+  city: string;
+  offers: Offers;
+}
+
+const initalState: InitialState = {
+  city: cities[0],
+  offers: []
 };
 
 
 const reducer = createReducer(initalState, (builder) => {
   builder
     .addCase(changeCity, (state, action) => {
-      state.city = action.payload.city;
-      state.offers = action.payload.offers;
+      state.city = action.payload;
+    })
+    .addCase(loadOffers, (state, action) => {
+      state.offers = action.payload;
     });
 });
 

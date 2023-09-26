@@ -1,5 +1,5 @@
 import { OffersList, Map } from 'components';
-import { cities } from 'mock/cities';
+import { cities } from 'const';
 import { useState } from 'react';
 import { Offer } from 'types';
 import { LocationsList } from 'components';
@@ -8,6 +8,7 @@ import { store } from 'store';
 
 function Main(): JSX.Element {
   const { offers } = store.getState();
+  // console.log(offers);
   const offerCount = offers.length;
   const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
   const [currentCity, setCurrentCity] = useState<string>(cities[0]);

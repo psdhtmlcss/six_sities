@@ -7,3 +7,9 @@ export const AppRoute = {
   Offer: '/offer/',
   NotFound: '/*'
 } as const;
+
+export enum APIRoute {
+  Offers = '/hotels',
+}
+
+export const cities = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'];
