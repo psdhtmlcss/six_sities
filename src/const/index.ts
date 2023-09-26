@@ -1,7 +1,5 @@
-import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT, AppRoute} from './const';
-import { cities } from './const';
-import { APIRoute } from './const';
+import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT, AppRoute, cities, APIRoute, AuthorizationStatus, TIMEOUT_SHOW_ERROR} from './const';
 
-export { URL_MARKER_CURRENT, URL_MARKER_DEFAULT, AppRoute, cities, APIRoute };
+export { URL_MARKER_CURRENT, URL_MARKER_DEFAULT, AppRoute, cities, APIRoute, AuthorizationStatus, TIMEOUT_SHOW_ERROR };
 
 

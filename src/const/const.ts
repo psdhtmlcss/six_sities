@@ -10,6 +10,15 @@ export const AppRoute = {
 
 export enum APIRoute {
   Offers = '/hotels',
+  Login = '/login'
 }
+
+export enum AuthorizationStatus {
+  Auth = 'auth',
+  NoAuth = 'no_auth',
+  Unknown = 'unknown'
+}
+
+export const TIMEOUT_SHOW_ERROR = 2000;
 
 export const cities = ['Paris', 'Cologne', 'Brussels', 'Amsterdam', 'Hamburg', 'Dusseldorf'];

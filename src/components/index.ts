@@ -9,5 +9,6 @@ import { ReviewItem } from './reviewItem/ReviewItem';
 import { Map } from './map/Map';
 import { LocationsList } from './locationsList/LocationsList';
 import { LocationItem } from './locationItem/LocationItem';
+import { ErrorMessage } from './errorMessage/ErrorMessage';
 
-export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem };
+export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem, ErrorMessage };
