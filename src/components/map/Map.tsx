@@ -1,8 +1,8 @@
 import {Icon, Marker} from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useMap } from 'hooks';
+import { useMap, useAppSelector } from 'hooks';
 import { Offer, Offers } from 'types';
 import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from 'const';
 
@@ -24,14 +24,29 @@ const currentCustomIcon = new Icon({
 });
 
 function Map({selectedOffer, offers}: MapScreenProps): JSX.Element {
-  console.log('im render');
-  const city = offers[0].city;
+  const currentCity = useAppSelector((state) => state.city);
+  const [cityLocation, setCityLocation] = useState(currentCity);
   const mapRef = useRef(null);
-  const map = useMap(mapRef, city);
+  const map = useMap(mapRef, currentCity);
   const { id } = useParams();
 
   useEffect(() => {
     if (map) {
+      if (currentCity !== cityLocation) {
+        map.flyTo(
+          [
+            currentCity.location.latitude,
+            currentCity.location.longitude
+          ],
+          currentCity.location.zoom,
+          {
+            animate: true,
+            duration: 1,
+          }
+        );
+
+        setCityLocation(currentCity);
+      }
       offers.forEach((offer) => {
         const marker = new Marker({
           lat: offer.location.latitude,

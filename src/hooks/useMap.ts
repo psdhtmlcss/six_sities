@@ -7,7 +7,6 @@ function useMap(mapRef: MutableRefObject<HTMLElement | null>, city: City | undef
   const isRenderedRef = useRef(false);
 
   useEffect(() => {
-    // console.log(isRenderedRef.current);
     if (mapRef.current !== null && !isRenderedRef.current && city) {
       const instance = new Map(mapRef.current, {
         center: {

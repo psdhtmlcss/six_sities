@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
 import { AppRoute } from 'const';
-import { useAppDispatch } from 'hooks';
-import { changeCity } from 'store/action';
+import { City } from 'types';
 
 type LocationItemProps = {
   city: string;
   onChangeCity: (city: string) => void;
-  currentCity: string;
+  currentCity: City;
 }
 
 function LocationItem({ city, onChangeCity, currentCity }: LocationItemProps): JSX.Element {
-  const dispatch = useAppDispatch();
   const handleClick = () => {
-    dispatch(changeCity(city));
     onChangeCity(city);
   };
-  const activeClass = city === currentCity ? 'tabs__item--active' : '';
+  const activeClass = city === currentCity.name ? 'tabs__item--active' : '';
   return (
     <li className='locations__item'>
       <Link

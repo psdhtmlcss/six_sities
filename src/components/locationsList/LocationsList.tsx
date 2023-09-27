@@ -1,9 +1,10 @@
 import { LocationItem } from 'components';
+import { City } from 'types';
 
 type LocationListProps = {
   cities: string[];
   onChangeCity: (city: string) => void;
-  currentCity: string;
+  currentCity: City;
 }
 
 function LocationsList({ cities, onChangeCity, currentCity }: LocationListProps): JSX.Element {

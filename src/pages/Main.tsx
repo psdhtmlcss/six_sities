@@ -1,16 +1,18 @@
-import { OffersList, Map } from 'components';
+import { OffersList, Map, LocationsList } from 'components';
 import { cities } from 'const';
 import { useState } from 'react';
-import { Offer } from 'types';
-import { LocationsList } from 'components';
+import { Offer} from 'types';
 import { store } from 'store';
+import { useAppSelector, useAppDispatch } from 'hooks';
+import { changeCity } from 'store/action';
 
 
 function Main(): JSX.Element {
+  const dispatch = useAppDispatch();
   const { offers } = store.getState();
   const [selectedOffer, setSelectedOffer] = useState<Offer | undefined>(undefined);
-  const [currentCity, setCurrentCity] = useState<string>(cities[0]);
-  const offersPlace = offers.filter((offer) => offer.city.name === currentCity);
+  const currentCity = useAppSelector((state) => state.city);
+  const offersPlace = offers.filter((offer) => offer.city.name === currentCity.name);
   const offerCount = offersPlace.length;
 
   const onListMouseOver = (offerId: number | null) => {
@@ -19,7 +21,8 @@ function Main(): JSX.Element {
   };
 
   const onChangeCity = (city: string) => {
-    setCurrentCity(city);
+    const newCity = offers.find((offer) => offer.city.name === city) as Offer;
+    dispatch(changeCity(newCity.city));
   };
   return (
     <>
@@ -33,7 +36,7 @@ function Main(): JSX.Element {
         <div className='cities__places-container container'>
           <section className='cities__places places'>
             <h2 className='visually-hidden'>Places</h2>
-            <b className='places__found'>{`${offerCount} places to stay in ${currentCity}`}</b>
+            <b className='places__found'>{`${offerCount} places to stay in ${currentCity.name}`}</b>
             <form className='places__sorting' action='#' method='get'>
               <span className='places__sorting-caption'>Sort by</span>
               <span className='places__sorting-type' tabIndex={0}>
