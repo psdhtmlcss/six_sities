@@ -36,3 +36,9 @@ export const redirectToRoute = createAction('redirectToRoute', (value: string) =
     payload: value
   }
 ));
+
+export const setUserEmail = createAction('setUserEmail', (value: string) => (
+  {
+    payload: value
+  }
+));
