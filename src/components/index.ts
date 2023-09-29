@@ -10,5 +10,6 @@ import { Map } from './map/Map';
 import { LocationsList } from './locationsList/LocationsList';
 import { LocationItem } from './locationItem/LocationItem';
 import { ErrorMessage } from './errorMessage/ErrorMessage';
+import { HistoryRouter } from './historyRouter';
 
-export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem, ErrorMessage };
+export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem, ErrorMessage, HistoryRouter };

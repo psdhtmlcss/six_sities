@@ -19,7 +19,8 @@ export const AppRoute = {
 
 export enum APIRoute {
   Offers = '/hotels',
-  Login = '/login'
+  Login = '/login',
+  Logout = '/logout',
 }
 
 export enum AuthorizationStatus {

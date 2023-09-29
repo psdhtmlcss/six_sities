@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App, ErrorMessage } from 'components';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from 'store';
 import { fetchOffersAction, checkAuthAction } from 'store/api-actions';
+import { HistoryRouter } from 'components';
+import { browserHistory } from 'services/browserHistory';
 
 store.dispatch(fetchOffersAction());
 store.dispatch(checkAuthAction());
@@ -16,10 +17,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <HistoryRouter history={browserHistory}>
         <ErrorMessage />
         <App />
-      </BrowserRouter>
+      </HistoryRouter>
     </Provider>
   </React.StrictMode>
 );

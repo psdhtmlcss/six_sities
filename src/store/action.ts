@@ -30,3 +30,9 @@ export const setLoadingDataStatus = createAction('setLoadingDataStatus', (value:
     payload: value
   }
 ));
+
+export const redirectToRoute = createAction('redirectToRoute', (value: string) => (
+  {
+    payload: value
+  }
+));

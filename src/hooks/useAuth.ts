@@ -1,7 +1,8 @@
+import { useAppSelector } from './useAppSelector';
+
 function useAuth() {
-  return {
-    login: 'test@mail.ru'
-  };
+  const auth = useAppSelector((state) => state.authorizationStatus);
+  return auth;
 }
 
 export { useAuth };

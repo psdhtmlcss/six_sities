@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { SignOut } from './SignOut';
 import { SignIn } from './SignIn';
-import { AppRoute } from 'const';
+import { AppRoute, AuthorizationStatus } from 'const';
 
 function Header(): JSX.Element {
   const user = useAuth();
@@ -23,7 +23,7 @@ function Header(): JSX.Element {
           </div>
           <nav className='header__nav'>
             {
-              user ? <SignOut /> : <SignIn />
+              user === AuthorizationStatus.Auth ? <SignOut /> : <SignIn />
             }
           </nav>
         </div>
