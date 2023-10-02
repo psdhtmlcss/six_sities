@@ -1,17 +1,18 @@
-import { Offer as OfferType, Reviews as ReviewsType } from 'types';
+import { Offer as OfferType } from 'types';
 import { useParams } from 'react-router-dom';
 import { ReviewsForm } from 'components';
 import { Reviews, Map, OffersList } from 'components';
 import { useAuth } from 'hooks';
 import { store } from 'store';
-import { reviews as reviewsJson } from 'mock/reviews';
+import { fetchReviewsAction } from 'store/api-actions';
 
 function Offer(): JSX.Element {
   const { offers } = store.getState();
   const user = useAuth();
   const { id } = useParams();
   const currentOffer = offers.find((offer) => offer.id === Number(id)) as OfferType;
-  const reviews: ReviewsType = reviewsJson;
+  store.dispatch(fetchReviewsAction(id as string));
+  const { reviews } = store.getState();
   const { images, title, isPremium, rating, type, bedrooms, maxAdults, price, goods, host, description } = currentOffer;
   return (
     <>
