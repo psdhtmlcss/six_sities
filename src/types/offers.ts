@@ -1,3 +1,5 @@
+import type { Reviews } from './reviews';
+
 type Location = {
   latitude: number;
   longitude: number;
@@ -35,3 +37,9 @@ export type Offer = {
 }
 
 export type Offers = Offer[];
+
+export type CurrentOffer = {
+  offer: Offer;
+  nearbyOffers: Offers;
+  reviews: Reviews;
+}

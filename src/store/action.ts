@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { Offers, City, Reviews } from 'types';
+import { Offers, City, Reviews, Offer } from 'types';
 
 export const changeCity = createAction('changeCity', (value: City) => (
   {
@@ -13,7 +13,7 @@ export const loadOffers = createAction('loadOffers', (value: Offers) => (
   }
 ));
 
-export const loadReviews = createAction('loadReviews', (value: Reviews) => (
+export const loadOffer = createAction('loadOffer', (value: [Offer, Offers, Reviews]) => (
   {
     payload: value
   }

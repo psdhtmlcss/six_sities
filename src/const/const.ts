@@ -19,6 +19,7 @@ export const AppRoute = {
 
 export enum APIRoute {
   Offers = '/hotels',
+  Offer = '/hotels/',
   Login = '/login',
   Logout = '/logout',
   Reviews = '/comments/'
