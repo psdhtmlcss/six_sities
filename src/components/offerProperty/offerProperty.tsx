@@ -15,6 +15,9 @@ function OfferProperty({ currentOffer }: OfferPropertyScreenProps): JSX.Element 
   const { images, title, isPremium, rating, type, bedrooms, maxAdults, price, goods, host, description } = currentOffer.offer;
   const reviews = currentOffer.reviews;
   const nearbyOffers = currentOffer.nearbyOffers;
+  const mapOffers: Offers = nearbyOffers.slice();
+  mapOffers.push(currentOffer.offer);
+
   return (
     <>
       <section className='property'>
@@ -104,12 +107,12 @@ function OfferProperty({ currentOffer }: OfferPropertyScreenProps): JSX.Element 
               <h2 className='reviews__title'>
                 Reviews · <span className='reviews__amount'>{reviews.length}</span>
               </h2>
-              {reviews.length && <Reviews reviews={reviews} />}
+              { Boolean(reviews.length) && <Reviews reviews={reviews} /> }
               { user && <ReviewsForm /> }
             </section>
           </div>
         </div>
-        <Map offers={nearbyOffers} />
+        <Map offers={mapOffers} selectedOffer={currentOffer.offer} />
       </section>
       <div className='container'>
         <section className='near-places places'>
