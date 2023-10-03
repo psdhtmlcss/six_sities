@@ -25,6 +25,12 @@ export const requireAuthorization = createAction('user/requireAuthorization', (v
   }
 ));
 
+export const sendReview = createAction('sendReview', (value: Reviews) => (
+  {
+    payload: value
+  }
+));
+
 export const setError = createAction('setError', (value: string | null) => (
   {
     payload: value

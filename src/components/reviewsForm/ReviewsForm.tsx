@@ -1,4 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { useAppDispatch, usePageId } from 'hooks';
+import { sendReviewAction } from 'store/api-actions';
 
 const CommentLength = {
   Min: 50,
@@ -6,6 +8,8 @@ const CommentLength = {
 };
 
 function ReviewsForm(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const id = usePageId() as string;
   const [rating, setRating] = useState<null | string>(null);
   const [comment, setComment] = useState<null | string>(null);
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +25,11 @@ function ReviewsForm(): JSX.Element {
   };
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    // const data = {
-    //   comment: comment,
-    //   rating: Number(rating),
-    // };
+    const data = {
+      comment: comment as string,
+      rating: Number(rating),
+    };
+    dispatch(sendReviewAction({data, id}));
   };
   return (
     <form className='reviews__form form' action='#' method='post' onSubmit={handleSubmit}>

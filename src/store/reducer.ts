@@ -1,6 +1,6 @@
 import { AuthorizationStatus, CURRENT_CITY } from 'const';
 import { createReducer } from '@reduxjs/toolkit';
-import { changeCity, loadOffers, loadOffer, requireAuthorization, setError, setLoadingDataStatus, setUserEmail } from './action';
+import { changeCity, loadOffers, loadOffer, requireAuthorization, setError, setLoadingDataStatus, setUserEmail, sendReview } from './action';
 import { Offers, City, Reviews, Offer } from 'types';
 
 type InitialState = {
@@ -44,6 +44,9 @@ const reducer = createReducer(initalState, (builder) => {
       state.currentOffer.offer = action.payload[0];
       state.currentOffer.nearbyOffers = action.payload[1];
       state.currentOffer.reviews = action.payload[2];
+    })
+    .addCase(sendReview, (state, action) => {
+      state.currentOffer.reviews = action.payload;
     })
     .addCase(requireAuthorization, (state, action) => {
       state.authorizationStatus = action.payload;
