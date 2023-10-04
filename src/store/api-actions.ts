@@ -46,8 +46,9 @@ export const checkAuthAction = createAsyncThunk<void, undefined, {
   'user/checkAuth',
   async (_arg, { dispatch, extra: api }) => {
     try {
-      await api.get(APIRoute.Login);
+      const { data } = await api.get<UserData>(APIRoute.Login);
       dispatch(requireAuthorization(AuthorizationStatus.Auth));
+      dispatch(setUserEmail(data.email));
     } catch {
       dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
     }
@@ -69,9 +70,9 @@ export const sendReviewAction = createAsyncThunk<void, ReviewData, {
   state: State;
   extra: AxiosInstance;
 }>(
-  'sendReview',
+  'data/sendReview',
   async (data, { dispatch, extra: api }) => {
-    const result = await api.post<Reviews>(`${APIRoute.Reviews}${data.id}`, data.data);
+    const result = await api.post<Reviews>(`${APIRoute.Reviews}${data.id}ff`, data.data);
     dispatch(sendReview(result.data));
   }
 );
@@ -86,7 +87,6 @@ export const loginAction = createAsyncThunk<void, AuthData, {
     const result = await api.post<UserData>(APIRoute.Login, data);
     saveToken(result.data.token);
     dispatch(requireAuthorization(AuthorizationStatus.Auth));
-    dispatch(setUserEmail(result.data.email));
     dispatch(redirectToRoute(AppRoute.Main));
   }
 );
@@ -101,5 +101,6 @@ export const logoutAction = createAsyncThunk<void, undefined, {
     await api.delete(APIRoute.Logout);
     dropToken();
     dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+    dispatch(setUserEmail(null));
   }
 );

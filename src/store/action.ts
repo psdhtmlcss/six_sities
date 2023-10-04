@@ -49,7 +49,7 @@ export const redirectToRoute = createAction('redirectToRoute', (value: string) =
   }
 ));
 
-export const setUserEmail = createAction('setUserEmail', (value: string) => (
+export const setUserEmail = createAction('setUserEmail', (value: string | null) => (
   {
     payload: value
   }

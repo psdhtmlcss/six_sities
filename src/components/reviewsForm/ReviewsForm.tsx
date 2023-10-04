@@ -12,6 +12,7 @@ function ReviewsForm(): JSX.Element {
   const id = usePageId() as string;
   const [rating, setRating] = useState<null | string>(null);
   const [comment, setComment] = useState<null | string>(null);
+
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setRating(evt.target.value);
 
