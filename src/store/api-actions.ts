@@ -72,7 +72,7 @@ export const sendReviewAction = createAsyncThunk<void, ReviewData, {
 }>(
   'data/sendReview',
   async (data, { dispatch, extra: api }) => {
-    const result = await api.post<Reviews>(`${APIRoute.Reviews}${data.id}ff`, data.data);
+    const result = await api.post<Reviews>(`${APIRoute.Reviews}${data.id}`, data.data);
     dispatch(sendReview(result.data));
   }
 );
@@ -87,6 +87,7 @@ export const loginAction = createAsyncThunk<void, AuthData, {
     const result = await api.post<UserData>(APIRoute.Login, data);
     saveToken(result.data.token);
     dispatch(requireAuthorization(AuthorizationStatus.Auth));
+    dispatch(setUserEmail(result.data.email));
     dispatch(redirectToRoute(AppRoute.Main));
   }
 );

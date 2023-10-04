@@ -1,5 +1,5 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-import { useAppDispatch, usePageId } from 'hooks';
+import { useState, ChangeEvent, FormEvent, useRef } from 'react';
+import { useAppDispatch, usePageId, useAppSelector } from 'hooks';
 import { sendReviewAction } from 'store/api-actions';
 
 const CommentLength = {
@@ -10,6 +10,8 @@ const CommentLength = {
 function ReviewsForm(): JSX.Element {
   const dispatch = useAppDispatch();
   const id = usePageId() as string;
+  const isError = useAppSelector((state) => Boolean(state.error));
+  const formRef = useRef<HTMLFormElement>(null);
   const [rating, setRating] = useState<null | string>(null);
   const [comment, setComment] = useState<null | string>(null);
 
@@ -31,9 +33,16 @@ function ReviewsForm(): JSX.Element {
       rating: Number(rating),
     };
     dispatch(sendReviewAction({data, id}));
+    if (!isError) {
+      setComment(null);
+      setRating(null);
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+    }
   };
   return (
-    <form className='reviews__form form' action='#' method='post' onSubmit={handleSubmit}>
+    <form ref={formRef} className='reviews__form form' action='#' method='post' onSubmit={handleSubmit}>
       <label className='reviews__label form__label' htmlFor='review'>
         Your review
       </label>
