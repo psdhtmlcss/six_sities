@@ -54,3 +54,9 @@ export const setUserEmail = createAction('setUserEmail', (value: string | null) 
     payload: value
   }
 ));
+
+export const changeSort = createAction('changeSort', (value: string) => (
+  {
+    payload: value
+  }
+));

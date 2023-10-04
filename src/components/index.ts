@@ -12,5 +12,6 @@ import { LocationItem } from './locationItem/LocationItem';
 import { ErrorMessage } from './errorMessage/ErrorMessage';
 import { HistoryRouter } from './historyRouter';
 import { OfferProperty } from './offerProperty/offerProperty';
+import { Sort } from './sort/Sort';
 
-export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem, ErrorMessage, HistoryRouter, OfferProperty };
+export { OfferCard, App, Header, Layout, OffersList, ReviewsForm, Reviews, ReviewItem, Map, LocationsList, LocationItem, ErrorMessage, HistoryRouter, OfferProperty, Sort };
