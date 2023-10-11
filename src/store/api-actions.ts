@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { APIRoute, AuthorizationStatus, TIMEOUT_SHOW_ERROR, AppRoute } from 'const';
 import { AppDispatch, Offers, State, UserData, AuthData, Reviews, ReviewData, Offer } from 'types';
-import { loadOffers, requireAuthorization, setError, setLoadingDataStatus, redirectToRoute, setUserEmail, loadOffer, sendReview, setCityOffers } from './action';
+import { loadOffers, requireAuthorization, setError, setLoadingDataStatus, setFetchingDataStatus, redirectToRoute, setUserEmail, loadOffer, sendReview, setCityOffers } from './action';
 import { store } from 'store';
 import { saveToken, dropToken } from 'services';
 
@@ -73,7 +73,9 @@ export const sendReviewAction = createAsyncThunk<void, ReviewData, {
 }>(
   'data/sendReview',
   async (data, { dispatch, extra: api }) => {
+    dispatch(setFetchingDataStatus(true));
     const result = await api.post<Reviews>(`${APIRoute.Reviews}${data.id}`, data.data);
+    dispatch(setFetchingDataStatus(false));
     dispatch(sendReview(result.data));
   }
 );
@@ -85,7 +87,9 @@ export const loginAction = createAsyncThunk<void, AuthData, {
 }>(
   'user/login',
   async (data, { dispatch, extra: api }) => {
+    dispatch(setFetchingDataStatus(true));
     const result = await api.post<UserData>(APIRoute.Login, data);
+    dispatch(setFetchingDataStatus(false));
     saveToken(result.data.token);
     dispatch(requireAuthorization(AuthorizationStatus.Auth));
     dispatch(setUserEmail(result.data.email));

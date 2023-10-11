@@ -51,6 +51,12 @@ export const setLoadingDataStatus = createAction('setLoadingDataStatus', (value:
   }
 ));
 
+export const setFetchingDataStatus = createAction('setFetchingDataStatus', (value: boolean) => (
+  {
+    payload: value
+  }
+));
+
 export const redirectToRoute = createAction('redirectToRoute', (value: string) => (
   {
     payload: value

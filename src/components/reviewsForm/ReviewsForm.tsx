@@ -11,6 +11,7 @@ function ReviewsForm(): JSX.Element {
   const dispatch = useAppDispatch();
   const id = usePageId() as string;
   const isError = useAppSelector((state) => Boolean(state.error));
+  const isFetching = useAppSelector((state) => state.isFetchingData);
   const formRef = useRef<HTMLFormElement>(null);
   const [rating, setRating] = useState<null | string>(null);
   const [comment, setComment] = useState<null | string>(null);
@@ -153,7 +154,7 @@ function ReviewsForm(): JSX.Element {
         <button
           className='reviews__submit form__submit button'
           type='submit'
-          disabled={!(comment && rating)}
+          disabled={!(comment && rating) || isFetching}
         >
           Submit
         </button>

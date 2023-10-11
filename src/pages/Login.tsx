@@ -1,5 +1,5 @@
 import { useRef, FormEvent } from 'react';
-import { useAppDispatch } from 'hooks';
+import { useAppDispatch, useAppSelector } from 'hooks';
 import { loginAction } from 'store/api-actions';
 import { AuthData } from 'types';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,7 @@ const formValidate = (value: string) => (value.trim().length !== 0);
 
 function Login(): JSX.Element {
   const dispatch = useAppDispatch();
+  const isFetching = useAppSelector((state) => state.isFetchingData);
   const loginInputRef = useRef<HTMLInputElement | null>(null);
   const passwordInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -56,7 +57,7 @@ function Login(): JSX.Element {
               required
             />
           </div>
-          <button className='login__submit form__submit button' type='submit'>
+          <button className='login__submit form__submit button' type='submit' disabled={isFetching}>
             Sign in
           </button>
         </form>

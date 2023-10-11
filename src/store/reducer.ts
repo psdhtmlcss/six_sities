@@ -1,6 +1,6 @@
 import { AuthorizationStatus, CURRENT_CITY, sortItems } from 'const';
 import { createReducer } from '@reduxjs/toolkit';
-import { changeCity, loadOffers, loadOffer, hoverOffer, requireAuthorization, setError, setLoadingDataStatus, setUserEmail, sendReview, changeSort, setCityOffers } from './action';
+import { changeCity, loadOffers, loadOffer, hoverOffer, requireAuthorization, setError, setLoadingDataStatus, setFetchingDataStatus, setUserEmail, sendReview, changeSort, setCityOffers } from './action';
 import { Offers, City, Reviews, Offer } from 'types';
 
 type InitialState = {
@@ -15,6 +15,7 @@ type InitialState = {
     reviews: Reviews;
   };
   isLoadingData: boolean;
+  isFetchingData: boolean;
   authorizationStatus: string;
   error: string | null;
   user: string | null;
@@ -33,6 +34,7 @@ const initalState: InitialState = {
     reviews: []
   },
   isLoadingData: false,
+  isFetchingData: false,
   authorizationStatus: AuthorizationStatus.Unknown,
   error: null,
   user: null,
@@ -81,6 +83,9 @@ const reducer = createReducer(initalState, (builder) => {
     })
     .addCase(setLoadingDataStatus, (state, action) => {
       state.isLoadingData = action.payload;
+    })
+    .addCase(setFetchingDataStatus, (state, action) => {
+      state.isFetchingData = action.payload;
     })
     .addCase(setUserEmail, (state, action) => {
       state.user = action.payload;
