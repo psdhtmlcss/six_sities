@@ -1,6 +1,8 @@
+import { Loading } from 'components';
+
 function LoadingScreen(): JSX.Element {
   return (
-    <p>Loading...</p>
+    <Loading />
   );
 }
 
