@@ -112,14 +112,14 @@ function OfferProperty({ currentOffer }: OfferPropertyScreenProps): JSX.Element 
             </section>
           </div>
         </div>
-        <Map offers={mapOffers} selectedOffer={currentOffer.offer} />
+        <Map />
       </section>
       <div className='container'>
         <section className='near-places places'>
           <h2 className='near-places__title'>
             Other places in the neighbourhood
           </h2>
-          <OffersList offers={currentOffer.nearbyOffers} />
+          <OffersList />
         </section>
       </div>
     </>

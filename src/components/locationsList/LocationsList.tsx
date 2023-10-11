@@ -1,18 +1,12 @@
 import { LocationItem } from 'components';
-import { City } from 'types';
+import { cities } from 'const';
 
-type LocationListProps = {
-  cities: string[];
-  onChangeCity: (city: string) => void;
-  currentCity: City;
-}
-
-function LocationsList({ cities, onChangeCity, currentCity }: LocationListProps): JSX.Element {
+function LocationsList(): JSX.Element {
   return (
     <ul className='locations__list tabs__list'>
       {
         cities.map((city) => (
-          <LocationItem key={city} city={city} onChangeCity={onChangeCity} currentCity={currentCity} />
+          <LocationItem key={city} city={city} />
         ))
       }
     </ul>

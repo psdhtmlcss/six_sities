@@ -13,6 +13,14 @@ export const loadOffers = createAction('loadOffers', (value: Offers) => (
   }
 ));
 
+export const hoverOffer = createAction('hoverOffer', (value: number | null) => (
+  {
+    payload: value
+  }
+));
+
+export const setCityOffers = createAction('setCityOffers');
+
 export const loadOffer = createAction('loadOffer', (value: [Offer, Offers, Reviews]) => (
   {
     payload: value

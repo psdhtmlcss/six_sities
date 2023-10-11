@@ -1,31 +1,27 @@
 import { Offer } from 'types';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { usePageId } from 'hooks';
+import { usePageId, useAppDispatch } from 'hooks';
 import { AppRoute } from 'const';
+import { hoverOffer } from 'store/action';
 
 type OfferScreenProps = {
   offer: Offer;
-  onListMouseOver?: (offer: number | null) => void;
 }
 
-function OfferCard({offer, onListMouseOver}: OfferScreenProps): JSX.Element {
+function OfferCard({offer}: OfferScreenProps): JSX.Element {
   const pageId = usePageId();
   const { id, previewImage, title, price, type, rating } = offer;
-  const [hover, setHover] = useState<number | null>(null);
-  const handleMouseOver = () => {
-    setHover(id);
-    if (onListMouseOver) {
-      onListMouseOver(hover);
-    }
+  const dispatch = useAppDispatch();
+  const handleMouseEnter = () => {
+    dispatch(hoverOffer(id));
   };
-  const handleMouseOut = () => {
-    setHover(null);
+  const handleMouseLeave = () => {
+    dispatch(hoverOffer(null));
   };
   const articleClass = pageId ? 'near-places__card' : 'cities__card';
   const wrapperClass = pageId ? 'near-places__image-wrapper' : 'cities__image-wrapper';
   return (
-    <article className={`place-card ${articleClass}`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+    <article className={`place-card ${articleClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className={`place-card__image-wrapper ${wrapperClass}`}>
         <Link to={`${AppRoute.Offer}${id}`}>
           <img
