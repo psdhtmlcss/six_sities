@@ -10,6 +10,7 @@ const formValidate = (value: string) => (value.trim().length !== 0);
 function Login(): JSX.Element {
   const dispatch = useAppDispatch();
   const isFetching = useAppSelector((state) => state.isFetchingData);
+  const currentCity = useAppSelector((state) => state.city);
   const loginInputRef = useRef<HTMLInputElement | null>(null);
   const passwordInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -30,6 +31,7 @@ function Login(): JSX.Element {
       }
     }
   };
+
   return (
     <div className='page__login-container container'>
       <section className='login'>
@@ -65,7 +67,7 @@ function Login(): JSX.Element {
       <section className='locations locations--login locations--current'>
         <div className='locations__item'>
           <Link className='locations__item-link' to={AppRoute.Main}>
-            <span>Amsterdam</span>
+            <span>{currentCity.name}</span>
           </Link>
         </div>
       </section>
