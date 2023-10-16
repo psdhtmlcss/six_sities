@@ -39,3 +39,8 @@ export const sortItems = {
   2: 'Price: high to low',
   3: 'Top rated first'
 };
+
+export enum NameSpace {
+  User = 'USER',
+  Offers = 'OFFERS'
+}

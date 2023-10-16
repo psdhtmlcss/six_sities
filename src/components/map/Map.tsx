@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useMap, useAppSelector } from 'hooks';
 import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from 'const';
+import { getCurrentCity, getOffers, getHoveredOffer } from 'store/offers/selectors';
 
 const defaultCustomIcon = new Icon({
   iconUrl: URL_MARKER_DEFAULT,
@@ -18,9 +19,9 @@ const currentCustomIcon = new Icon({
 });
 
 function Map(): JSX.Element {
-  const currentCity = useAppSelector((state) => state.city);
-  const offers = useAppSelector((state) => state.cityOffers);
-  const selectedOfferId = useAppSelector((state) => state.hoveredOffer);
+  const currentCity = useAppSelector(getCurrentCity);
+  const offers = useAppSelector(getOffers);
+  const selectedOfferId = useAppSelector(getHoveredOffer);
   const selectedOffer = selectedOfferId ? offers.find((offer) => offer.id === selectedOfferId) : null;
   const [cityLocation, setCityLocation] = useState(currentCity);
   const mapRef = useRef(null);

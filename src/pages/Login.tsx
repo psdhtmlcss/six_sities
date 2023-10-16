@@ -4,13 +4,15 @@ import { loginAction } from 'store/api-actions';
 import { AuthData } from 'types';
 import { Link } from 'react-router-dom';
 import { AppRoute } from 'const';
+import { getCurrentCity } from 'store/offers/selectors';
+import { getIsFetchingData } from 'store/user/selectors';
 
 const formValidate = (value: string) => (value.trim().length !== 0);
 
 function Login(): JSX.Element {
   const dispatch = useAppDispatch();
-  const isFetching = useAppSelector((state) => state.isFetchingData);
-  const currentCity = useAppSelector((state) => state.city);
+  const isFetching = useAppSelector(getIsFetchingData);
+  const currentCity = useAppSelector(getCurrentCity);
   const loginInputRef = useRef<HTMLInputElement | null>(null);
   const passwordInputRef = useRef<HTMLInputElement | null>(null);
 

@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent, useRef } from 'react';
 import { useAppDispatch, usePageId, useAppSelector } from 'hooks';
 import { sendReviewAction } from 'store/api-actions';
+import { getIsFetchingData } from 'store/offers/selectors';
+import { getError } from 'store/offers/selectors';
 
 const CommentLength = {
   Min: 50,
@@ -10,8 +12,8 @@ const CommentLength = {
 function ReviewsForm(): JSX.Element {
   const dispatch = useAppDispatch();
   const id = usePageId() as string;
-  const isError = useAppSelector((state) => Boolean(state.error));
-  const isFetching = useAppSelector((state) => state.isFetchingData);
+  const isError = Boolean(useAppSelector(getError));
+  const isFetching = useAppSelector(getIsFetchingData);
   const formRef = useRef<HTMLFormElement>(null);
   const [rating, setRating] = useState<null | string>(null);
   const [comment, setComment] = useState<null | string>(null);

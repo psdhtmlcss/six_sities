@@ -2,7 +2,7 @@ import { Offer } from 'types';
 import { Link } from 'react-router-dom';
 import { usePageId, useAppDispatch } from 'hooks';
 import { AppRoute } from 'const';
-import { hoverOffer } from 'store/action';
+import { hoverOffer } from 'store/offers/offers';
 
 type OfferScreenProps = {
   offer: Offer;

@@ -3,10 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'components';
 import { AppRoute, AuthorizationStatus } from 'const';
 import { useAppSelector } from 'hooks';
+import { getAuthorizationStatus } from 'store/user/selectors';
+import { getIsLoadingOffers } from 'store/offers/selectors';
 
 function App(): JSX.Element {
-  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
-  const isLoadingData = useAppSelector((state) => state.isLoadingData);
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
+  const isLoadingData = useAppSelector(getIsLoadingOffers);
 
   if (authorizationStatus === AuthorizationStatus.Unknown || isLoadingData) {
     return (

@@ -4,12 +4,13 @@ import { fetchOfferAction } from 'store/api-actions';
 import { OfferProperty } from 'components';
 import { LoadingScreen } from 'pages';
 import { CurrentOffer } from 'types';
+import { getIsFetchingData, getCurrentOffer } from 'store/offers/selectors';
 
 function Offer(): JSX.Element {
   const id = usePageId();
   const dispatch = useAppDispatch();
-  const currentOffer = useAppSelector((state) => state.currentOffer);
-  const isLoading = useAppSelector((state) => state.isLoadingData);
+  const currentOffer = useAppSelector(getCurrentOffer);
+  const isLoading = useAppSelector(getIsFetchingData);
 
   useEffect(() => {
     if (!currentOffer.offer || currentOffer?.offer?.id !== Number(id)) {

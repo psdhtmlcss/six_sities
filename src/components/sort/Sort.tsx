@@ -1,10 +1,11 @@
 import { useState, SyntheticEvent } from 'react';
 import { sortItems } from 'const';
 import { useAppSelector, useAppDispatch } from 'hooks';
-import { changeSort } from 'store/action';
+import { changeSort } from 'store/offers/offers';
+import { getCurrentSort } from 'store/offers/selectors';
 
 function Sort(): JSX.Element {
-  const currentSortItem = useAppSelector((state) => state.sort);
+  const currentSortItem = useAppSelector(getCurrentSort);
   const dispatch = useAppDispatch();
   const [sortOpen, setSortOpen] = useState(false);
   const sortClass = sortOpen ? 'places__options--opened' : '';

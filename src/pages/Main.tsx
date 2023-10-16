@@ -1,10 +1,11 @@
 import { OffersList, Map, LocationsList, Sort } from 'components';
 import { useAppSelector } from 'hooks';
+import { getCurrentCity, getOffersPlace } from 'store/offers/selectors';
 
 
 function Main(): JSX.Element {
-  const currentCity = useAppSelector((state) => state.city);
-  const offersPlace = useAppSelector((state) => state.cityOffers);
+  const currentCity = useAppSelector(getCurrentCity);
+  const offersPlace = useAppSelector(getOffersPlace);
 
   const offerCount = offersPlace.length;
 
