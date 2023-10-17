@@ -48,6 +48,7 @@ function Login(): JSX.Element {
               name='email'
               placeholder='Email'
               required
+              autoFocus
             />
           </div>
           <div className='login__input-wrapper form__input-wrapper'>

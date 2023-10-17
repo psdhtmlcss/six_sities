@@ -1,10 +1,10 @@
 import { OfferCard } from 'components';
 import { usePageId, useAppSelector } from 'hooks';
-import { getOffers } from 'store/offers/selectors';
+import { getSortOffers } from 'store/offers/selectors';
 
 function OffersList(): JSX.Element {
   const pageId = usePageId();
-  const offers = useAppSelector(getOffers);
+  const offers = useAppSelector(getSortOffers);
   const listClass = pageId ? 'near-places__list' : 'cities__places-list tabs__content';
   return (
     <div className={`places__list ${listClass}`}>

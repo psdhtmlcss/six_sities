@@ -42,6 +42,8 @@ export const offers = createSlice({
     changeCity: (state, action: PayloadAction<City>) => {
       state.city = action.payload;
       state.cityOffers = state.offers.filter((offer) => offer.city.name === state.city.name);
+      state.sortOffers = sortOffers(state.cityOffers, state.sort);
+      state.sort = sortItems[0];
     },
     changeSort: (state, action: PayloadAction<string>) => {
       state.sort = action.payload;
